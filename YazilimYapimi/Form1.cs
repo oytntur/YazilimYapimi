@@ -33,7 +33,7 @@ namespace YazilimYapimi
                     + "\nHoşgeldiniz","Giriş Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 if (Convert.ToInt32(dr["yetkiID"]) == 2)
                 {
-                    kullaniciEkran kullaniciEkran = new kullaniciEkran();
+                    kullaniciEkran kullaniciEkran = new kullaniciEkran(Convert.ToInt32(dr["userID"]));
                     kullaniciEkran.Show();
                 }
             }
