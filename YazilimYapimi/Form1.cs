@@ -36,6 +36,11 @@ namespace YazilimYapimi
                     kullaniciEkran kullaniciEkran = new kullaniciEkran(Convert.ToInt32(dr["userID"]));
                     kullaniciEkran.Show();
                 }
+                else if(Convert.ToInt32(dr["yetkiID"]) == 1)
+                {
+                    adminEkran adminEkran = new adminEkran();
+                    adminEkran.Show();
+                }
             }
             else
             {

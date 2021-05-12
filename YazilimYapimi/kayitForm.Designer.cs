@@ -193,7 +193,7 @@ namespace YazilimYapimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(452, 450);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtBoxTC);
             this.Controls.Add(this.txtBoxGSM);
