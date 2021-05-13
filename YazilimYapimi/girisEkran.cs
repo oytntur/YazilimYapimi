@@ -12,12 +12,12 @@ using System.Data.SqlClient;
 namespace YazilimYapimi
 {
    
-    public partial class Form1 : Form
+    public partial class girisEkran : Form
     {
         SqlCommand cmd;
         SqlDataReader dr;
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
-        public Form1()
+        public girisEkran()
         {
             InitializeComponent();
         }

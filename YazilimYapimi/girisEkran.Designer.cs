@@ -1,7 +1,7 @@
 ﻿
 namespace YazilimYapimi
 {
-    partial class Form1
+    partial class girisEkran
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -39,22 +39,23 @@ namespace YazilimYapimi
             // 
             // txtBoxUsername
             // 
-            this.txtBoxUsername.Location = new System.Drawing.Point(257, 184);
+            this.txtBoxUsername.Location = new System.Drawing.Point(205, 67);
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(100, 22);
             this.txtBoxUsername.TabIndex = 0;
             // 
             // txtBoxPass
             // 
-            this.txtBoxPass.Location = new System.Drawing.Point(257, 227);
+            this.txtBoxPass.Location = new System.Drawing.Point(205, 110);
             this.txtBoxPass.Name = "txtBoxPass";
+            this.txtBoxPass.PasswordChar = '*';
             this.txtBoxPass.Size = new System.Drawing.Size(100, 22);
             this.txtBoxPass.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 187);
+            this.label1.Location = new System.Drawing.Point(99, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 2;
@@ -63,7 +64,7 @@ namespace YazilimYapimi
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 232);
+            this.label2.Location = new System.Drawing.Point(137, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 3;
@@ -71,7 +72,7 @@ namespace YazilimYapimi
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(150, 317);
+            this.btnLogin.Location = new System.Drawing.Point(99, 217);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -81,7 +82,7 @@ namespace YazilimYapimi
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(282, 317);
+            this.btnSignUp.Location = new System.Drawing.Point(231, 217);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(75, 23);
             this.btnSignUp.TabIndex = 5;
@@ -89,18 +90,18 @@ namespace YazilimYapimi
             this.btnSignUp.UseVisualStyleBackColor = true;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // Form1
+            // girisEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 705);
+            this.ClientSize = new System.Drawing.Size(431, 465);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxPass);
             this.Controls.Add(this.txtBoxUsername);
-            this.Name = "Form1";
+            this.Name = "girisEkran";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

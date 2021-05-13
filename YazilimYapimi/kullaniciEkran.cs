@@ -21,53 +21,10 @@ namespace YazilimYapimi
         {
             InitializeComponent();
             this.userID =userID;
-            cmd = new SqlCommand("satisProc '"+userID+"'",con);
-            con.Open();
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                ListViewItem add = new ListViewItem();
-                add.Text = dr["ID"].ToString();
-                add.SubItems.Add(dr["UrunAd"].ToString());
-                add.SubItems.Add(dr["Fiyat"].ToString()+" TL");
-                add.SubItems.Add(dr["Miktar"].ToString() + " Birim");
-                add.SubItems.Add(dr["Ad"].ToString() + " " + dr["Soyad"].ToString());
-                urunListView.Items.Add(add);
-
-            }
-            dr.Close();
-            cmd = new SqlCommand("SELECT * FROM tblUser WHERE userID='" + userID + "'", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                lblMoney.Text = dr["userMoney"].ToString();
-                lblAdSoyad.Text = dr["userAd"].ToString()+" "+dr["userSoyad"].ToString();
-            }
-            dr.Close();
-            cmd = new SqlCommand("SELECT * FROM urunView", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbUrun.Items.Add(dr["Ad"].ToString());
-            }
-            dr.Close();
-            cmd = new SqlCommand("SELECT * FROM LogView", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                ListViewItem add = new ListViewItem();
-                add.Text = dr["Tarih"].ToString();
-                add.SubItems.Add(dr["AlanAd"].ToString() + " Birim Fiyatı " + dr["BirimFiyat"].ToString() +
-                    " TL Olan " + dr["UrunAd"].ToString() + "'dan " + dr["Miktar"].ToString() + " Birim Satın Aldı");
-                add.SubItems.Add(dr["AlanAd"].ToString() +" "+ dr["SatanAd"] + "'nın hesabına " +
-                    dr["Fiyat"].ToString() + " TL Gönderdi");
-                add.SubItems.Add(dr["AlanAd"].ToString() +" "+dr["LeftMoney"].ToString()+" TLsi Kaldı");
-                add.SubItems.Add(dr["BirimFiyat"].ToString() + " TL" );
-                logView.Items.Add(add);
-            }
-            dr.Close();
-            con.Close();
-            
+            urunGetir();
+            urunAdGetir();
+            logGetir();
+            paraGetir();
         } 
         int id = 0;
 
@@ -91,7 +48,8 @@ namespace YazilimYapimi
                 +urunListView.SelectedItems[0].SubItems[4].Text);
             alimForm alimForm = new alimForm(userID, urunListView.SelectedItems[0].SubItems[1].Text,
                 urunListView.SelectedItems[0].SubItems[4].Text, saticiID, cost, stok,
-                Convert.ToInt32(urunListView.SelectedItems[0].SubItems[0].Text), Convert.ToDecimal(lblMoney.Text));
+                Convert.ToInt32(urunListView.SelectedItems[0].SubItems[0].Text), Convert.ToDecimal(lblMoney.Text),
+                urunListView);
             alimForm.ShowDialog();
         }
 
@@ -127,6 +85,73 @@ namespace YazilimYapimi
 
                 throw;
             }
+            con.Close();
+        }
+        private void urunGetir()
+        {
+            urunListView.Items.Clear();
+            cmd = new SqlCommand("satisProc '" + userID + "'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListViewItem add = new ListViewItem();
+                add.Text = dr["ID"].ToString();
+                add.SubItems.Add(dr["UrunAd"].ToString());
+                add.SubItems.Add(dr["Fiyat"].ToString() + " TL");
+                add.SubItems.Add(dr["Miktar"].ToString() + " Birim");
+                add.SubItems.Add(dr["Ad"].ToString() + " " + dr["Soyad"].ToString());
+                urunListView.Items.Add(add);
+
+            }
+            dr.Close();
+            con.Close();
+        }
+        private void paraGetir()
+        {
+            cmd = new SqlCommand("SELECT * FROM tblUser WHERE userID='" + userID + "'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lblMoney.Text = dr["userMoney"].ToString();
+                lblAdSoyad.Text = dr["userAd"].ToString() + " " + dr["userSoyad"].ToString();
+            }
+            dr.Close();
+            con.Close();
+        }
+        private void urunAdGetir()
+        {
+            cmd = new SqlCommand("SELECT * FROM urunView", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbUrun.Items.Add(dr["Ad"].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+        private void logGetir()
+        {
+            logView.Items.Clear();
+            cmd = new SqlCommand("SELECT * FROM LogView", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListViewItem add = new ListViewItem();
+                add.Text = dr["Tarih"].ToString();
+                add.SubItems.Add(dr["AlanAd"].ToString() + " Birim Fiyatı " + dr["BirimFiyat"].ToString() +
+                    " TL Olan " + dr["UrunAd"].ToString() + "'dan " + dr["Miktar"].ToString() + " Birim Satın Aldı");
+                add.SubItems.Add(dr["AlanAd"].ToString() + " " + dr["SatanAd"] + "'nın hesabına " +
+                    dr["Fiyat"].ToString() + " TL Gönderdi");
+                add.SubItems.Add(dr["AlanAd"].ToString() + " " + dr["LeftMoney"].ToString() + " TLsi Kaldı");
+                add.SubItems.Add(dr["BirimFiyat"].ToString() + " TL");
+                logView.Items.Add(add);
+            }
+            dr.Close();
+            con.Close();
         }
     }
 }
