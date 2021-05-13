@@ -7,4 +7,7 @@ Adminin şu anlık projedeki görevi talep edilen para onay ve ürün onay işle
 Proje SQL ve VISUAL STUDIO kullanılarak gerçekleştirilmiştir.
 SQL içerisinde  6 file table,5 view ve 7 stored procedure oluşturulmuştur.
 Vısual Studıo içerisinde 5 form ekranı oluşturulmuştur ve UI / Framework tasarım desenleri eklenmiştir.
+Admin için sisteme giriş yaparken;
+Kullanıcı Adı:admin
+Password:admin
 
