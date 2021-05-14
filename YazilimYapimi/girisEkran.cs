@@ -35,8 +35,55 @@ namespace YazilimYapimi
                 {
                     kullaniciEkran kullaniciEkran = new kullaniciEkran(Convert.ToInt32(dr["userID"]));
                     kullaniciEkran.Show();
+                    this.Hide();
                 }
                 else if(Convert.ToInt32(dr["yetkiID"]) == 1)
+                {
+                    adminEkran adminEkran = new adminEkran();
+                    adminEkran.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kullanici Adı Veya Şifre Yanlış", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            kayitForm kayitForm = new kayitForm();
+            kayitForm.ShowDialog();
+        }
+
+        private void txtBoxPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                // these last two lines will stop the beep sound
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("SELECT * from tblUser where userUsername='" + txtBoxUsername.Text + "'AND userPassword='" + txtBoxPass.Text + "'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                MessageBox.Show(dr["userAd"].ToString() + " " + dr["userSoyad"].ToString()
+                    + "\nHoşgeldiniz", "Giriş Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Convert.ToInt32(dr["yetkiID"]) == 2)
+                {
+                    kullaniciEkran kullaniciEkran = new kullaniciEkran(Convert.ToInt32(dr["userID"]));
+                    kullaniciEkran.Show();
+                    this.Hide();
+                }
+                else if (Convert.ToInt32(dr["yetkiID"]) == 1)
                 {
                     adminEkran adminEkran = new adminEkran();
                     adminEkran.Show();
@@ -49,7 +96,7 @@ namespace YazilimYapimi
             con.Close();
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             kayitForm kayitForm = new kayitForm();
             kayitForm.ShowDialog();

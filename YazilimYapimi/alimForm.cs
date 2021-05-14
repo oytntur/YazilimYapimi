@@ -20,13 +20,45 @@ namespace YazilimYapimi
         SqlDataReader dr;
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
 
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            bool hata = false;
+            cmd = new SqlCommand("satinAl '" + (metroComboBox1.SelectedIndex + 1) + "','" + satisID + "'," +
+                "'" + Convert.ToInt32(cost * (metroComboBox1.SelectedIndex + 1)) + "','" + userID + "','" + saticiID + "'", con);
+            if ((metroComboBox1.SelectedIndex + 1) * cost < userMoney)
+            {
+                con.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Ürün Başarıyla Satın Alındı", "Satın Alma Başarılı", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    con.Close();
+                    urunGetir(list);
+                }
+                catch (Exception)
+                {
+                    hata = true;
+                    throw;
+                }
+
+                if (!hata)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Yetersiz Bakiye!!!");
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             bool hata = false;
-            cmd = new SqlCommand("satinAl '" + (cmbStok.SelectedIndex + 1) + "','" + satisID + "'," +
-                "'" + Convert.ToInt32(cost * (cmbStok.SelectedIndex + 1)) + "','" + userID + "','" + saticiID + "'", con);
-            if ((cmbStok.SelectedIndex + 1) * cost < userMoney)
+            cmd = new SqlCommand("satinAl '" + (metroComboBox1.SelectedIndex + 1) + "','" + satisID + "'," +
+                "'" + Convert.ToInt32(cost * (metroComboBox1.SelectedIndex + 1)) + "','" + userID + "','" + saticiID + "'", con);
+            if ((metroComboBox1.SelectedIndex + 1) * cost < userMoney)
             {
                 con.Open();
                 try
@@ -70,7 +102,7 @@ namespace YazilimYapimi
             list = listView;
             for (int i = 0; i < stok; i++)
             {
-                cmbStok.Items.Add((i + 1).ToString() + " Birim");
+                metroComboBox1.Items.Add((i + 1).ToString() + " Birim");
             }
         }
         private void urunGetir(ListView urunListView)

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace YazilimYapimi
 {
-    public partial class kullaniciEkran : Form
+    public partial class kullaniciEkran : MetroFramework.Forms.MetroForm
     {
         SqlCommand cmd;
         SqlDataReader dr;
@@ -115,7 +115,7 @@ namespace YazilimYapimi
             while (dr.Read())
             {
                 lblMoney.Text = dr["userMoney"].ToString();
-                lblAdSoyad.Text = dr["userAd"].ToString() + " " + dr["userSoyad"].ToString();
+                groupBox3.Text = dr["userAd"].ToString() + " " + dr["userSoyad"].ToString();
             }
             dr.Close();
             con.Close();
@@ -151,6 +151,46 @@ namespace YazilimYapimi
                 logView.Items.Add(add);
             }
             dr.Close();
+            con.Close();
+        }
+
+        private void kullaniciEkran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("EXEC satisEkle '" + userID + "','" + (cmbUrun.SelectedIndex + 1) + "','" + Convert.ToDecimal(txtFiyat.Text)
+                + "','" + Convert.ToInt32(txtStok.Text) + "'", con);
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("işlem başarıyla gerçekleşti");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            con.Close();
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("EXEC addMoney '" + userID + "','" + Convert.ToDecimal(textBox1.Text) + "'", con);
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Para Yatırma İşleminiz Oluşturuldu");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bir Hata Meydana Geldi");
+                throw;
+            }
             con.Close();
         }
     }

@@ -68,7 +68,7 @@ namespace YazilimYapimi
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Location = new System.Drawing.Point(22, 84);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1349, 708);
@@ -230,14 +230,14 @@ namespace YazilimYapimi
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.LightCoral;
             this.tabPage3.Controls.Add(this.logView);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1341, 679);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Text = "Loglar";
             // 
             // logView
             // 
@@ -247,18 +247,20 @@ namespace YazilimYapimi
             this.usedMoney,
             this.leftMoney,
             this.birimFiyat});
+            this.logView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.logView.HideSelection = false;
             this.logView.Location = new System.Drawing.Point(6, 6);
             this.logView.Name = "logView";
-            this.logView.Size = new System.Drawing.Size(1097, 479);
+            this.logView.Size = new System.Drawing.Size(1329, 667);
             this.logView.TabIndex = 1;
+            this.logView.TileSize = new System.Drawing.Size(1, 1);
             this.logView.UseCompatibleStateImageBehavior = false;
             this.logView.View = System.Windows.Forms.View.Details;
             // 
             // Tarih
             // 
             this.Tarih.Text = "İşlem Tarihi";
-            this.Tarih.Width = 137;
+            this.Tarih.Width = 200;
             // 
             // islemDetay
             // 
@@ -284,10 +286,11 @@ namespace YazilimYapimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 733);
+            this.ClientSize = new System.Drawing.Size(1394, 815);
             this.Controls.Add(this.tabControl1);
             this.Name = "adminEkran";
-            this.Text = "adminEkran";
+            this.Text = "Yönetici Paneli";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.adminEkran_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

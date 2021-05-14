@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace YazilimYapimi
 {
-    public partial class adminEkran : Form
+    public partial class adminEkran : MetroFramework.Forms.MetroForm
     {
         SqlCommand cmd;
         SqlDataReader dr;
@@ -168,6 +169,11 @@ namespace YazilimYapimi
             }
             dr.Close();
             con.Close();
+        }
+
+        private void adminEkran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
