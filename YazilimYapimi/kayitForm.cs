@@ -26,11 +26,11 @@ namespace YazilimYapimi
             bool hata = false;
             if (txtBoxAd.Text == "" && txtBoxAdres.Text == "" && txtBoxGSM.Text == "" && txtBoxMail.Text == "" && txtBoxPassword.Text == "" && txtBoxTC.Text == "" && txtBoxUsername.Text == "" && txtBtnSoyad.Text == "")
             {
-                MessageBox.Show("Alanlar Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+                MessageBox.Show("Alanlar Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                
+
                 try
                 {
                     cmd = new SqlCommand("kullaniciKayit '" + txtBoxAd.Text + "','" + txtBtnSoyad.Text + "','" + txtBoxUsername.Text +
@@ -48,8 +48,8 @@ namespace YazilimYapimi
             }
             if (!hata)
             {
-                MessageBox.Show(txtBoxAd.Text + " " + txtBtnSoyad.Text + "\nAdlı Kullanıcı Başarıyla Oluşturuldu","Kayıt Başarılı",
-                    MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show(txtBoxAd.Text + " " + txtBtnSoyad.Text + "\nAdlı Kullanıcı Başarıyla Oluşturuldu", "Kayıt Başarılı",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

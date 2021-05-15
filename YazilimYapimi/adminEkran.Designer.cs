@@ -76,7 +76,7 @@ namespace YazilimYapimi
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage1.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.urunListView);
@@ -91,18 +91,20 @@ namespace YazilimYapimi
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(863, 25);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(830, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 17);
+            this.label2.Size = new System.Drawing.Size(199, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Onay Almış Ürünler";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 25);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(171, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 17);
+            this.label1.Size = new System.Drawing.Size(235, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Onay Bekleyen Ürünler";
             // 
@@ -184,7 +186,7 @@ namespace YazilimYapimi
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage2.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage2.Controls.Add(this.transLView);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -200,10 +202,11 @@ namespace YazilimYapimi
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.transLView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.transLView.HideSelection = false;
-            this.transLView.Location = new System.Drawing.Point(6, 6);
+            this.transLView.Location = new System.Drawing.Point(131, 42);
             this.transLView.Name = "transLView";
-            this.transLView.Size = new System.Drawing.Size(679, 476);
+            this.transLView.Size = new System.Drawing.Size(1036, 606);
             this.transLView.TabIndex = 2;
             this.transLView.UseCompatibleStateImageBehavior = false;
             this.transLView.View = System.Windows.Forms.View.Details;
@@ -212,25 +215,26 @@ namespace YazilimYapimi
             // columnHeader5
             // 
             this.columnHeader5.Text = "ID";
+            this.columnHeader5.Width = 73;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Adı Soyadı";
-            this.columnHeader6.Width = 128;
+            this.columnHeader6.Width = 225;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Miktar";
-            this.columnHeader7.Width = 129;
+            this.columnHeader7.Width = 234;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Onay Durumu";
-            this.columnHeader8.Width = 170;
+            this.columnHeader8.Width = 246;
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.LightCoral;
+            this.tabPage3.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage3.Controls.Add(this.logView);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";

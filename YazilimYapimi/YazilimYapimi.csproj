@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\user %281%29.png" />
     <None Include="Resources\wp3144364.png" />
     <None Include="Resources\lock.png" />
     <None Include="Resources\id-card.png" />

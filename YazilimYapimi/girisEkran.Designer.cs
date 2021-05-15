@@ -32,10 +32,12 @@ namespace YazilimYapimi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(girisEkran));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSignUp = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtBoxPass = new Bunifu.Framework.UI.BunifuTextbox();
             this.txtBoxUsername = new Bunifu.Framework.UI.BunifuTextbox();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +45,7 @@ namespace YazilimYapimi
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(72, 212);
+            this.label1.Location = new System.Drawing.Point(66, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 25);
             this.label1.TabIndex = 2;
@@ -54,11 +56,26 @@ namespace YazilimYapimi
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(106, 272);
+            this.label2.Location = new System.Drawing.Point(100, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Şifre :";
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuImageButton1.Enabled = false;
+            this.bunifuImageButton1.Image = global::YazilimYapimi.Properties.Resources.user__1_;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(187, 12);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(214, 142);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 11;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
             // 
             // btnSignUp
             // 
@@ -104,7 +121,7 @@ namespace YazilimYapimi
             this.btnLogin.IdleFillColor = System.Drawing.Color.White;
             this.btnLogin.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLogin.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.Location = new System.Drawing.Point(206, 367);
+            this.btnLogin.Location = new System.Drawing.Point(200, 369);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(181, 41);
@@ -119,7 +136,7 @@ namespace YazilimYapimi
             this.txtBoxPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.txtBoxPass.ForeColor = System.Drawing.Color.SeaGreen;
             this.txtBoxPass.Icon = ((System.Drawing.Image)(resources.GetObject("txtBoxPass.Icon")));
-            this.txtBoxPass.Location = new System.Drawing.Point(225, 259);
+            this.txtBoxPass.Location = new System.Drawing.Point(219, 261);
             this.txtBoxPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxPass.Name = "txtBoxPass";
             this.txtBoxPass.Size = new System.Drawing.Size(253, 52);
@@ -133,7 +150,7 @@ namespace YazilimYapimi
             this.txtBoxUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.txtBoxUsername.ForeColor = System.Drawing.Color.SeaGreen;
             this.txtBoxUsername.Icon = ((System.Drawing.Image)(resources.GetObject("txtBoxUsername.Icon")));
-            this.txtBoxUsername.Location = new System.Drawing.Point(225, 199);
+            this.txtBoxUsername.Location = new System.Drawing.Point(219, 201);
             this.txtBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(253, 52);
@@ -147,6 +164,7 @@ namespace YazilimYapimi
             this.BackColor = System.Drawing.Color.Turquoise;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(606, 509);
+            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtBoxPass);
@@ -155,6 +173,7 @@ namespace YazilimYapimi
             this.Controls.Add(this.label1);
             this.Name = "girisEkran";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +186,7 @@ namespace YazilimYapimi
         private Bunifu.Framework.UI.BunifuTextbox txtBoxPass;
         private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSignUp;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
     }
 }
 

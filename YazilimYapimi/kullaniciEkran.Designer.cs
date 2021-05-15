@@ -32,10 +32,11 @@ namespace YazilimYapimi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kullaniciEkran));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblAdSoyad = new System.Windows.Forms.Label();
-            this.lblMoney = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblMoney = new System.Windows.Forms.Label();
             this.urunListView = new System.Windows.Forms.ListView();
             this.urunID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.urunAd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,14 +63,13 @@ namespace YazilimYapimi
             this.usedMoney = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.leftMoney = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.birimFiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,7 +85,7 @@ namespace YazilimYapimi
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.SlateGray;
+            this.tabPage1.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.urunListView);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -95,14 +95,18 @@ namespace YazilimYapimi
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ürünler";
             // 
-            // label5
+            // groupBox3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(124, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "TL";
+            this.groupBox3.Controls.Add(this.lblAdSoyad);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.lblMoney);
+            this.groupBox3.Location = new System.Drawing.Point(951, 7);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(156, 109);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
             // 
             // lblAdSoyad
             // 
@@ -113,14 +117,14 @@ namespace YazilimYapimi
             this.lblAdSoyad.TabIndex = 4;
             this.lblAdSoyad.Text = "Mevcut Para";
             // 
-            // lblMoney
+            // label5
             // 
-            this.lblMoney.AutoSize = true;
-            this.lblMoney.Location = new System.Drawing.Point(63, 56);
-            this.lblMoney.Name = "lblMoney";
-            this.lblMoney.Size = new System.Drawing.Size(87, 17);
-            this.lblMoney.TabIndex = 2;
-            this.lblMoney.Text = "Mevcut Para";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(124, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 17);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "TL";
             // 
             // label1
             // 
@@ -130,6 +134,15 @@ namespace YazilimYapimi
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bakiye :";
+            // 
+            // lblMoney
+            // 
+            this.lblMoney.AutoSize = true;
+            this.lblMoney.Location = new System.Drawing.Point(63, 56);
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Size = new System.Drawing.Size(87, 17);
+            this.lblMoney.TabIndex = 2;
+            this.lblMoney.Text = "Mevcut Para";
             // 
             // urunListView
             // 
@@ -175,13 +188,13 @@ namespace YazilimYapimi
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.tabPage2.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1107, 489);
+            this.tabPage2.Size = new System.Drawing.Size(1113, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Para/Ürün Ekle";
             // 
@@ -209,7 +222,7 @@ namespace YazilimYapimi
             this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bunifuThinButton21.BackColor = System.Drawing.Color.Turquoise;
             this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
             this.bunifuThinButton21.ButtonText = "Ürünü Ekle";
             this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -324,7 +337,7 @@ namespace YazilimYapimi
             this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bunifuThinButton22.BackColor = System.Drawing.Color.Turquoise;
             this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
             this.bunifuThinButton22.ButtonText = "Para Yatır";
             this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -373,12 +386,12 @@ namespace YazilimYapimi
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.LightCoral;
+            this.tabPage3.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage3.Controls.Add(this.logView);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1107, 489);
+            this.tabPage3.Size = new System.Drawing.Size(1113, 489);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Alışveriş Geçmişi";
             // 
@@ -423,19 +436,6 @@ namespace YazilimYapimi
             this.birimFiyat.Text = "Ürün Birim Fiyatı";
             this.birimFiyat.Width = 190;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblAdSoyad);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.lblMoney);
-            this.groupBox3.Location = new System.Drawing.Point(951, 7);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(156, 109);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
             // kullaniciEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,14 +447,14 @@ namespace YazilimYapimi
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.kullaniciEkran_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
