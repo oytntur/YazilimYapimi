@@ -45,7 +45,7 @@ namespace YazilimYapimi
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(23, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace YazilimYapimi
             // 
             this.urunAd.AutoSize = true;
             this.urunAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.urunAd.Location = new System.Drawing.Point(179, 13);
+            this.urunAd.Location = new System.Drawing.Point(189, 60);
             this.urunAd.Name = "urunAd";
             this.urunAd.Size = new System.Drawing.Size(70, 25);
             this.urunAd.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace YazilimYapimi
             // 
             this.saticiAd.AutoSize = true;
             this.saticiAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.saticiAd.Location = new System.Drawing.Point(483, 13);
+            this.saticiAd.Location = new System.Drawing.Point(493, 60);
             this.saticiAd.Name = "saticiAd";
             this.saticiAd.Size = new System.Drawing.Size(70, 25);
             this.saticiAd.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace YazilimYapimi
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(290, 13);
+            this.label4.Location = new System.Drawing.Point(300, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(187, 25);
             this.label4.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace YazilimYapimi
             // 
             this.lblcost.AutoSize = true;
             this.lblcost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblcost.Location = new System.Drawing.Point(740, 13);
+            this.lblcost.Location = new System.Drawing.Point(750, 60);
             this.lblcost.Name = "lblcost";
             this.lblcost.Size = new System.Drawing.Size(70, 25);
             this.lblcost.TabIndex = 7;
@@ -95,7 +95,7 @@ namespace YazilimYapimi
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(603, 13);
+            this.label3.Location = new System.Drawing.Point(613, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 25);
             this.label3.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace YazilimYapimi
             // 
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(519, 128);
+            this.metroComboBox1.Location = new System.Drawing.Point(529, 175);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(121, 30);
             this.metroComboBox1.TabIndex = 10;
@@ -114,7 +114,7 @@ namespace YazilimYapimi
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(254, 133);
+            this.label2.Location = new System.Drawing.Point(264, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 25);
             this.label2.TabIndex = 11;
@@ -127,7 +127,7 @@ namespace YazilimYapimi
             this.btnBuy.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnBuy.ActiveForecolor = System.Drawing.Color.White;
             this.btnBuy.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnBuy.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuy.BackgroundImage")));
             this.btnBuy.ButtonText = "Satın Al";
             this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -138,7 +138,7 @@ namespace YazilimYapimi
             this.btnBuy.IdleFillColor = System.Drawing.Color.White;
             this.btnBuy.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnBuy.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnBuy.Location = new System.Drawing.Point(329, 199);
+            this.btnBuy.Location = new System.Drawing.Point(339, 246);
             this.btnBuy.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(181, 41);
@@ -161,7 +161,7 @@ namespace YazilimYapimi
             this.Controls.Add(this.urunAd);
             this.Controls.Add(this.label1);
             this.Name = "alimForm";
-            this.Text = "alimForm";
+            this.Text = "Alış Formu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

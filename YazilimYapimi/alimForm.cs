@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace YazilimYapimi
 {
-    public partial class alimForm : Form
+    public partial class alimForm : MetroFramework.Forms.MetroForm
     {
         int userID, saticiID, satisID;
         decimal cost, userMoney;
