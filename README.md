@@ -11,3 +11,5 @@ Admin için sisteme giriş yaparken;
 Kullanıcı Adı:admin
 Password:admin
 
+Proje Tanıtım Videosu: https://youtu.be/Podg2hCASmE
+
