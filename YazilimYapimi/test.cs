@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace YazilimYapimi
 {
-    public partial class test : Form
+    public partial class test : MetroFramework.Forms.MetroForm
     {
         public test()
         {
