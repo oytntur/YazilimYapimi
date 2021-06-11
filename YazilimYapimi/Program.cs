@@ -16,7 +16,7 @@ namespace YazilimYapimi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new test());
+            Application.Run(new adminEkran());
         }
     }
 }
