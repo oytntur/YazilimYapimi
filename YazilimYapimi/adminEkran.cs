@@ -17,7 +17,7 @@ namespace YazilimYapimi
         SqlCommand cmd;
         SqlDataReader dr;
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
-      
+
         public adminEkran()
         {
             InitializeComponent();
@@ -25,6 +25,8 @@ namespace YazilimYapimi
             satisOnay();
             trans();
             logGoster();
+            MuhasebeGoster();
+            paraGetir();
         }
         int id = 0;
         private void transLView_DoubleClick(object sender, EventArgs e)
@@ -80,8 +82,8 @@ namespace YazilimYapimi
             {
                 //do something else
             }
-            
-            
+
+
         }
         private void satisOnay()
         {
@@ -171,11 +173,41 @@ namespace YazilimYapimi
             con.Close();
         }
 
+
         private void adminEkran_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
+        private void MuhasebeGoster()
+        {
+            muhasebe.Items.Clear();
+            cmd = new SqlCommand("SELECT * FROM LogView", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                ListViewItem add = new ListViewItem();
+                add.Text = dr["AlanAd"].ToString() + " " + dr["AlanSoyad"].ToString();
+                add.SubItems.Add(dr["UrunAd"].ToString());
+                add.SubItems.Add(dr["Miktar"].ToString() + " Birim");
+                add.SubItems.Add(dr["Fiyat"].ToString() + " Tl");
+                muhasebe.Items.Add(add);
+            }
+            dr.Close();
+            con.Close();
+        }
+        private void paraGetir()
+        {
+            cmd = new SqlCommand("SELECT * FROM tblUser WHERE userID='" + 3 + "'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            lblmevcut.Text = dr["userMoney"].ToString();
+            
+            dr.Close();
+            con.Close();
 
-       
+
+        }
     }
 }

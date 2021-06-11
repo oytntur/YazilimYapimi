@@ -59,13 +59,14 @@ namespace YazilimYapimi
             this.birimFiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblmevcut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.muhasebe = new System.Windows.Forms.ListView();
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -302,7 +303,7 @@ namespace YazilimYapimi
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Turquoise;
             this.tabPage4.Controls.Add(this.groupBox1);
-            this.tabPage4.Controls.Add(this.listView1);
+            this.tabPage4.Controls.Add(this.muhasebe);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -313,55 +314,56 @@ namespace YazilimYapimi
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblmevcut);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(962, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 361);
+            this.groupBox1.Size = new System.Drawing.Size(373, 318);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Muhasebe";
             // 
-            // label4
+            // lblmevcut
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(233, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "label4";
+            this.lblmevcut.AutoSize = true;
+            this.lblmevcut.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblmevcut.Location = new System.Drawing.Point(184, 125);
+            this.lblmevcut.Name = "lblmevcut";
+            this.lblmevcut.Size = new System.Drawing.Size(154, 29);
+            this.lblmevcut.TabIndex = 2;
+            this.lblmevcut.Text = "mevcut para";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(21, 123);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(23, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(142, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Toplam Para:";
             // 
-            // listView1
+            // muhasebe
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.muhasebe.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(929, 563);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.muhasebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.muhasebe.HideSelection = false;
+            this.muhasebe.Location = new System.Drawing.Point(17, 25);
+            this.muhasebe.Name = "muhasebe";
+            this.muhasebe.Size = new System.Drawing.Size(939, 582);
+            this.muhasebe.TabIndex = 0;
+            this.muhasebe.UseCompatibleStateImageBehavior = false;
+            this.muhasebe.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Alıcı";
-            this.columnHeader10.Width = 200;
+            this.columnHeader10.Width = 175;
             // 
             // columnHeader11
             // 
@@ -377,6 +379,18 @@ namespace YazilimYapimi
             // 
             this.columnHeader13.Text = "Fiyat";
             this.columnHeader13.Width = 175;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.Khaki;
+            this.label4.Location = new System.Drawing.Point(76, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Komisyon Tutarları";
             // 
             // adminEkran
             // 
@@ -430,13 +444,14 @@ namespace YazilimYapimi
         private System.Windows.Forms.ColumnHeader leftMoney;
         private System.Windows.Forms.ColumnHeader birimFiyat;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView muhasebe;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblmevcut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.Label label4;
     }
 }

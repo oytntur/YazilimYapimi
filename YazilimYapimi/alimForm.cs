@@ -18,7 +18,7 @@ namespace YazilimYapimi
         ListView list;
         SqlCommand cmd;
         SqlDataReader dr;
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
