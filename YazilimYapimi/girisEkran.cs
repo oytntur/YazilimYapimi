@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.IO;
-using ClosedXML.Excel;
 
 namespace YazilimYapimi
 {
@@ -22,7 +20,6 @@ namespace YazilimYapimi
         public girisEkran()
         {
             InitializeComponent();
-            
 
         }
 

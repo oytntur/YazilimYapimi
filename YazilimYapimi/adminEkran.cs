@@ -17,7 +17,7 @@ namespace YazilimYapimi
         SqlCommand cmd;
         SqlDataReader dr;
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
-      
+        //
         public adminEkran()
         {
             InitializeComponent();
