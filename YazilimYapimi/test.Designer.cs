@@ -39,6 +39,11 @@ namespace YazilimYapimi
             this.appData = new YazilimYapimi.AppData();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.excelLogTableAdapter = new YazilimYapimi.AppDataTableAdapters.excelLogTableAdapter();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -46,6 +51,8 @@ namespace YazilimYapimi
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Turquoise;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -57,6 +64,7 @@ namespace YazilimYapimi
             this.dataGridView1.DataSource = this.excelLogBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(23, 63);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(776, 350);
@@ -68,6 +76,7 @@ namespace YazilimYapimi
             this.urunAdDataGridViewTextBoxColumn.HeaderText = "urunAd";
             this.urunAdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.urunAdDataGridViewTextBoxColumn.Name = "urunAdDataGridViewTextBoxColumn";
+            this.urunAdDataGridViewTextBoxColumn.ReadOnly = true;
             this.urunAdDataGridViewTextBoxColumn.Width = 125;
             // 
             // tarihDataGridViewTextBoxColumn
@@ -76,6 +85,7 @@ namespace YazilimYapimi
             this.tarihDataGridViewTextBoxColumn.HeaderText = "tarih";
             this.tarihDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tarihDataGridViewTextBoxColumn.Name = "tarihDataGridViewTextBoxColumn";
+            this.tarihDataGridViewTextBoxColumn.ReadOnly = true;
             this.tarihDataGridViewTextBoxColumn.Width = 125;
             // 
             // miktarDataGridViewTextBoxColumn
@@ -84,6 +94,7 @@ namespace YazilimYapimi
             this.miktarDataGridViewTextBoxColumn.HeaderText = "miktar";
             this.miktarDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.miktarDataGridViewTextBoxColumn.Name = "miktarDataGridViewTextBoxColumn";
+            this.miktarDataGridViewTextBoxColumn.ReadOnly = true;
             this.miktarDataGridViewTextBoxColumn.Width = 125;
             // 
             // costDataGridViewTextBoxColumn
@@ -92,6 +103,7 @@ namespace YazilimYapimi
             this.costDataGridViewTextBoxColumn.HeaderText = "cost";
             this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.ReadOnly = true;
             this.costDataGridViewTextBoxColumn.Width = 125;
             // 
             // excelLogBindingSource
@@ -106,22 +118,68 @@ namespace YazilimYapimi
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(660, 439);
+            this.metroButton1.Location = new System.Drawing.Point(660, 486);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(146, 39);
             this.metroButton1.TabIndex = 1;
-            this.metroButton1.Text = "Yazdır";
+            this.metroButton1.Text = "Tabloyu Yazdır";
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // excelLogTableAdapter
             // 
             this.excelLogTableAdapter.ClearBeforeFill = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 439);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(444, 439);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 444);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Başlangıç Tarihi";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(340, 444);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Bitiş Tarihi :";
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(660, 439);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(146, 39);
+            this.metroButton2.TabIndex = 6;
+            this.metroButton2.Text = "Tabloyu Güncelle";
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 501);
+            this.ClientSize = new System.Drawing.Size(829, 548);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "test";
@@ -131,6 +189,7 @@ namespace YazilimYapimi
             ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,5 +204,10 @@ namespace YazilimYapimi
         private System.Windows.Forms.DataGridViewTextBoxColumn tarihDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn miktarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }
