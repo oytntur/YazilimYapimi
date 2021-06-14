@@ -217,6 +217,7 @@ namespace YazilimYapimi
                 throw;
             }
             con.Close();
+            satisKontrol(Convert.ToInt32(bunifuMetroTextbox2.Text), Convert.ToDecimal(bunifuMetroTextbox1.Text), comboBox1.SelectedIndex + 1);
         }
         private void talepKontrol(int miktar,decimal fiyat,int urunid)
         {
@@ -234,6 +235,7 @@ namespace YazilimYapimi
                     stok = Convert.ToInt32(dr["miktar"]);
                     userid = Convert.ToInt32(dr["userID"]);
                     talepid = Convert.ToInt32(dr["talepID"]);
+                    break;
                 }
             }
 
@@ -254,9 +256,41 @@ namespace YazilimYapimi
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        private void satisKontrol()
+        private void satisKontrol(int miktar, decimal fiyat, int urunid)
         {
+            SqlCommand cmd2;
+            cmd = new SqlCommand("select * from tblSatis where urunID='" + urunid + "'and" +
+                " userID != '" + userID + "'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            int stok = 0, satisid = 0;
+            int userid = 0, talepid = 0;
+            while (dr.Read())
+            {
+                if (Convert.ToDecimal(dr["cost"]) <= fiyat && Convert.ToInt32(dr["stokMiktar"]) >= miktar)
+                {                   
+                    userid = Convert.ToInt32(dr["userID"]);
+                    satisid = Convert.ToInt32(dr["satisID"]);
+                    break;
+                }
+            }
 
+            dr.Close();
+            cmd = new SqlCommand("(select count(talepID) as 'Test' from tblTalepler)", con);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                talepid = Convert.ToInt32(dr["Test"]);
+            }
+            dr.Close();
+            cmd2 = new SqlCommand("exec satinAl '" + miktar + "'," +
+                        " '" + satisid + "' ," +
+                        "'" + fiyat + "','" + userID + "'," +
+                        "'" + userid + "'", con);
+            cmd2.ExecuteNonQuery();
+            cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
