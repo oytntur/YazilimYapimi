@@ -24,7 +24,8 @@ namespace YazilimYapimi
         {
             bool hata = false;
             cmd = new SqlCommand("satinAl '" + (metroComboBox1.SelectedIndex + 1) + "','" + satisID + "'," +
-                "'" + Convert.ToInt32(cost * (metroComboBox1.SelectedIndex + 1)) + "','" + userID + "','" + saticiID + "'", con);
+                "'" + Convert.ToInt32(cost * (metroComboBox1.SelectedIndex + 1)) + "','" + userID + "'," +
+                "'" + saticiID + "'", con);
             if ((metroComboBox1.SelectedIndex + 1) * cost < userMoney)
             {
                 con.Open();

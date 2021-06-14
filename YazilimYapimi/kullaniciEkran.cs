@@ -15,7 +15,7 @@ namespace YazilimYapimi
     {
         SqlCommand cmd;
         SqlDataReader dr;
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
         int userID;
         public kullaniciEkran(int userID)
         {
@@ -128,6 +128,7 @@ namespace YazilimYapimi
             while (dr.Read())
             {
                 cmbUrun.Items.Add(dr["Ad"].ToString());
+                comboBox1.Items.Add(dr["Ad"].ToString());
             }
             dr.Close();
             con.Close();
@@ -164,6 +165,7 @@ namespace YazilimYapimi
             cmd = new SqlCommand("EXEC satisEkle '" + userID + "','" + (cmbUrun.SelectedIndex + 1) + "','" + Convert.ToDecimal(txtFiyat.Text)
                 + "','" + Convert.ToInt32(txtStok.Text) + "'", con);
             con.Open();
+            bool hata = false;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -171,10 +173,14 @@ namespace YazilimYapimi
             }
             catch (Exception)
             {
-
+                hata = true;
                 throw;
             }
             con.Close();
+            if (!hata)
+            {
+                talepKontrol(Convert.ToInt32(txtStok.Text), Convert.ToDecimal(txtFiyat.Text),cmbUrun.SelectedIndex+1);
+            }
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -194,6 +200,63 @@ namespace YazilimYapimi
             con.Close();
         }
 
-        
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("exec talepOlustur '" + (comboBox1.SelectedIndex + 1) + "'," +
+                "'" + Convert.ToInt32(bunifuMetroTextbox2.Text) + "'," +
+                "'" + Convert.ToDecimal(bunifuMetroTextbox1.Text) + "'," +
+                "'"+userID+"'", con);
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            con.Close();
+        }
+        private void talepKontrol(int miktar,decimal fiyat,int urunid)
+        {
+            SqlCommand cmd2;
+            cmd = new SqlCommand("select * from tblTalepler where bitti=0 and urunID='"+urunid+"'and" +
+                " userID != '"+userID+"'", con);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            int stok=0,satisid=0;
+            int userid = 0,talepid=0;
+            while (dr.Read())
+            {
+                if (Convert.ToDecimal(dr["priceTag"]) >= fiyat && Convert.ToInt32(dr["miktar"]) >= miktar)
+                {
+                    stok = Convert.ToInt32(dr["miktar"]);
+                    userid = Convert.ToInt32(dr["userID"]);
+                    talepid = Convert.ToInt32(dr["talepID"]);
+                }
+            }
+
+            dr.Close();
+            cmd = new SqlCommand("(select count(satisID) as 'Test' from tblSatis)",con);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                satisid = Convert.ToInt32(dr["test"]);
+            }
+            dr.Close();
+            cmd2 = new SqlCommand("exec satinAl '" + stok + "'," +
+                        " '"+satisid+"' ," +
+                        "'" + fiyat + "','" + userid + "'," +
+                        "'" + userID + "'", con);
+            cmd2.ExecuteNonQuery();
+            cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        private void satisKontrol()
+        {
+
+        }
     }
 }
