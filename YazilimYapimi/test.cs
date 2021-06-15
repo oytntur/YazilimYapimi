@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,36 +26,66 @@ namespace YazilimYapimi
 
         private void test_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'appData.excelLog' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.excelLogTableAdapter.Fill(this.appData.excelLog);
-            MessageBox.Show(dateTimePicker1.Value.Date.ToString("yyyyMMdd"));
+
 
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        using (XLWorkbook workbook = new XLWorkbook())
-                        {
-                            workbook.Worksheets.Add(this.appData.excelLog.CopyToDataTable(), "Log");
-                            workbook.SaveAs(sfd.FileName);
-                        }
-                    }
-                    catch (Exception)
-                    {
+            DataTable dt = new DataTable();
 
-                        throw;
-                    }
+            //Adding the Columns.
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                dt.Columns.Add(column.HeaderText, column.ValueType);
+            }
+
+            //Adding the Rows.
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                dt.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
                 }
             }
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "Customers");
+
+                //Set the color of Header Row.
+                //A resembles First Column while C resembles Third column.
+                wb.Worksheet(1).Cells("A1:C1").Style.Fill.BackgroundColor = XLColor.DarkGreen;
+                for (int i = 1; i <= dt.Rows.Count; i++)
+                {
+                    //A resembles First Column while C resembles Third column.
+                    //Header row is at Position 1 and hence First row starts from Index 2.
+                    string cellRange = string.Format("A{0}:C{0}", i + 1);
+                    if (i % 2 != 0)
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.GreenYellow;
+                    }
+                    else
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.Yellow;
+                    }
+
+                }
+                //Adjust widths of Columns.
+                wb.Worksheet(1).Columns().AdjustToContents();
+
+                //Save the Excel file.
+                wb.SaveAs(folderPath + "DataGridViewExport.xlsx");
+            } 
         }
         void griddoldur()
         {
+
             con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
             da = new SqlDataAdapter("exec excelProc @p1,@p2", con);
             da.SelectCommand.Parameters.Add("@p1", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
@@ -65,7 +96,6 @@ namespace YazilimYapimi
             dataGridView1.DataSource = ds.Tables["Personel"];
             con.Close();
         }
-
         private void metroButton2_Click(object sender, EventArgs e)
         {
             griddoldur();
