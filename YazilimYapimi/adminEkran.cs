@@ -4,20 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using MetroFramework;
 
 namespace YazilimYapimi
 {
+    
     public partial class adminEkran : MetroFramework.Forms.MetroForm
     {
         SqlCommand cmd;
         SqlDataReader dr;
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+        decimal USD=0, EUR=0, GBP=0;
         public adminEkran()
         {
             InitializeComponent();
@@ -27,12 +30,34 @@ namespace YazilimYapimi
             logGoster();
             MuhasebeGoster();
             paraGetir();
+            dovizGetir();
         }
         int id = 0;
         private void transLView_DoubleClick(object sender, EventArgs e)
         {
             id = int.Parse(transLView.SelectedItems[0].SubItems[0].Text);
-            cmd = new SqlCommand("EXEC paraOnay '" + id + "'", con);
+            decimal carpan = 0;
+            if (transLView.SelectedItems[0].SubItems[4].Text == "TRY")
+            {
+                carpan = 1;
+            }
+            else if (transLView.SelectedItems[0].SubItems[4].Text == "USD")
+            {
+                carpan = USD;
+             
+            }
+            else if (transLView.SelectedItems[0].SubItems[4].Text == "EUR")
+            {
+                carpan = EUR;
+                
+            }
+            else if (transLView.SelectedItems[0].SubItems[4].Text == "GBP")
+            {
+                carpan = GBP;
+                
+            }
+            cmd = new SqlCommand("EXEC paraOnay '" + id + "',@p1", con);
+            cmd.Parameters.Add("@p1", SqlDbType.Decimal).Value = carpan;
             con.Open();
             DialogResult dialogResult = MessageBox.Show("Onay Vermek İstiyormusunuz"
                 , "Onay", MessageBoxButtons.YesNo);
@@ -135,7 +160,7 @@ namespace YazilimYapimi
                 ListViewItem add = new ListViewItem();
                 add.Text = dr["ID"].ToString();
                 add.SubItems.Add(dr["Ad"].ToString() + " " + dr["Soyad"].ToString());
-                add.SubItems.Add(dr["miktar"].ToString() + " TL");
+                add.SubItems.Add(dr["miktar"].ToString() + " " +dr["paraBirim"].ToString());
                 if (!Convert.ToBoolean(dr["transOnay"]))
                 {
                     add.SubItems.Add("Onaylanmamış");
@@ -144,6 +169,7 @@ namespace YazilimYapimi
                 {
                     add.SubItems.Add("Onaylanmış");
                 }
+                add.SubItems.Add(dr["paraBirim"].ToString());
 
                 transLView.Items.Add(add);
 
@@ -208,6 +234,36 @@ namespace YazilimYapimi
             con.Close();
 
 
+        }
+        private void dovizGetir()
+        {
+            
+            const string URL = @"https://www.tcmb.gov.tr/kurlar/today.xml";
+            XDocument xdoc = XDocument.Load(URL);
+
+            foreach (XElement elem in xdoc.Descendants("Currency"))
+            {
+                if (elem.Attribute("Kod").Value == "USD")
+                {
+                    string temp = elem.Element("ForexBuying").Value;
+                    temp.Replace('.', ',');
+                    USD = Convert.ToDecimal(temp, new CultureInfo("en-US"));
+                }
+                else if(elem.Attribute("Kod").Value == "EUR")
+                {
+                    string temp = elem.Element("ForexBuying").Value;
+                    temp.Replace('.', ',');
+                    EUR = Convert.ToDecimal(temp, new CultureInfo("en-US"));
+                }
+                else if (elem.Attribute("Kod").Value == "GBP")
+                {
+                    string temp = elem.Element("ForexBuying").Value;
+                    temp.Replace('.', ',');
+                    GBP = Convert.ToDecimal(temp, new CultureInfo("en-US"));
+                }
+                
+
+            }
         }
     }
 }

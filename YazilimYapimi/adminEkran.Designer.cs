@@ -59,6 +59,7 @@ namespace YazilimYapimi
             this.birimFiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblmevcut = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.muhasebe = new System.Windows.Forms.ListView();
@@ -66,7 +67,6 @@ namespace YazilimYapimi
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -324,6 +324,18 @@ namespace YazilimYapimi
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Muhasebe";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.Khaki;
+            this.label4.Location = new System.Drawing.Point(76, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Komisyon Tutarları";
+            // 
             // lblmevcut
             // 
             this.lblmevcut.AutoSize = true;
@@ -379,18 +391,6 @@ namespace YazilimYapimi
             // 
             this.columnHeader13.Text = "Fiyat";
             this.columnHeader13.Width = 175;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.Khaki;
-            this.label4.Location = new System.Drawing.Point(76, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Komisyon Tutarları";
             // 
             // adminEkran
             // 
