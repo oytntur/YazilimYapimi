@@ -53,6 +53,8 @@ namespace YazilimYapimi
             this.label2 = new System.Windows.Forms.Label();
             this.cmbUrun = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.paraBirim = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -72,8 +74,8 @@ namespace YazilimYapimi
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Cikis = new System.Windows.Forms.Button();
+            this.Don = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,7 +96,7 @@ namespace YazilimYapimi
             this.tabControl1.Location = new System.Drawing.Point(10, 87);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1121, 518);
+            this.tabControl1.Size = new System.Drawing.Size(1146, 518);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -105,7 +107,7 @@ namespace YazilimYapimi
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1113, 489);
+            this.tabPage1.Size = new System.Drawing.Size(1138, 489);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ürünler";
             // 
@@ -117,7 +119,7 @@ namespace YazilimYapimi
             this.groupBox3.Controls.Add(this.lblMoney);
             this.groupBox3.Location = new System.Drawing.Point(951, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(156, 109);
+            this.groupBox3.Size = new System.Drawing.Size(179, 109);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
@@ -125,7 +127,7 @@ namespace YazilimYapimi
             // lblAdSoyad
             // 
             this.lblAdSoyad.AutoSize = true;
-            this.lblAdSoyad.Location = new System.Drawing.Point(31, 28);
+            this.lblAdSoyad.Location = new System.Drawing.Point(45, 28);
             this.lblAdSoyad.Name = "lblAdSoyad";
             this.lblAdSoyad.Size = new System.Drawing.Size(87, 17);
             this.lblAdSoyad.TabIndex = 4;
@@ -134,7 +136,7 @@ namespace YazilimYapimi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(124, 56);
+            this.label5.Location = new System.Drawing.Point(125, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 17);
             this.label5.TabIndex = 5;
@@ -143,7 +145,7 @@ namespace YazilimYapimi
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 56);
+            this.label1.Location = new System.Drawing.Point(4, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 1;
@@ -152,7 +154,7 @@ namespace YazilimYapimi
             // lblMoney
             // 
             this.lblMoney.AutoSize = true;
-            this.lblMoney.Location = new System.Drawing.Point(63, 56);
+            this.lblMoney.Location = new System.Drawing.Point(77, 61);
             this.lblMoney.Name = "lblMoney";
             this.lblMoney.Size = new System.Drawing.Size(87, 17);
             this.lblMoney.TabIndex = 2;
@@ -179,26 +181,27 @@ namespace YazilimYapimi
             // urunID
             // 
             this.urunID.Text = "ID";
+            this.urunID.Width = 95;
             // 
             // urunAd
             // 
             this.urunAd.Text = "Ürün Adı";
-            this.urunAd.Width = 130;
+            this.urunAd.Width = 174;
             // 
             // urunFiyat
             // 
             this.urunFiyat.Text = "Fiyat";
-            this.urunFiyat.Width = 72;
+            this.urunFiyat.Width = 100;
             // 
             // stok
             // 
             this.stok.Text = "Stok Miktarı";
-            this.stok.Width = 104;
+            this.stok.Width = 156;
             // 
             // satanUser
             // 
             this.satanUser.Text = "Satan Kişi";
-            this.satanUser.Width = 146;
+            this.satanUser.Width = 244;
             // 
             // tabPage2
             // 
@@ -208,7 +211,7 @@ namespace YazilimYapimi
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1113, 489);
+            this.tabPage2.Size = new System.Drawing.Size(1138, 489);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Para/Ürün Ekle";
             // 
@@ -224,7 +227,7 @@ namespace YazilimYapimi
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.Location = new System.Drawing.Point(21, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 330);
+            this.groupBox2.Size = new System.Drawing.Size(455, 330);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ürün Ekle";
@@ -332,7 +335,7 @@ namespace YazilimYapimi
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.paraBirim);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.bunifuThinButton22);
             this.groupBox1.Controls.Add(this.label6);
@@ -345,6 +348,30 @@ namespace YazilimYapimi
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Para Ekle";
+            // 
+            // paraBirim
+            // 
+            this.paraBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.paraBirim.FormattingEnabled = true;
+            this.paraBirim.Items.AddRange(new object[] {
+            "TRY",
+            "USD",
+            "EUR",
+            "GBP"});
+            this.paraBirim.Location = new System.Drawing.Point(216, 152);
+            this.paraBirim.Name = "paraBirim";
+            this.paraBirim.Size = new System.Drawing.Size(232, 33);
+            this.paraBirim.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(6, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(204, 25);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Yatırılacak Para Turu :";
             // 
             // bunifuThinButton22
             // 
@@ -367,7 +394,7 @@ namespace YazilimYapimi
             this.bunifuThinButton22.Location = new System.Drawing.Point(165, 233);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton22.Size = new System.Drawing.Size(206, 41);
             this.bunifuThinButton22.TabIndex = 15;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
@@ -376,7 +403,7 @@ namespace YazilimYapimi
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(35, 90);
+            this.label6.Location = new System.Drawing.Point(23, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 25);
             this.label6.TabIndex = 14;
@@ -393,7 +420,7 @@ namespace YazilimYapimi
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox1.isPassword = false;
-            this.textBox1.Location = new System.Drawing.Point(205, 76);
+            this.textBox1.Location = new System.Drawing.Point(216, 71);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(232, 44);
@@ -407,7 +434,7 @@ namespace YazilimYapimi
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1113, 489);
+            this.tabPage3.Size = new System.Drawing.Size(1138, 489);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Alışveriş Geçmişi";
             // 
@@ -419,6 +446,7 @@ namespace YazilimYapimi
             this.usedMoney,
             this.leftMoney,
             this.birimFiyat});
+            this.logView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.logView.HideSelection = false;
             this.logView.Location = new System.Drawing.Point(7, 7);
             this.logView.Name = "logView";
@@ -435,17 +463,17 @@ namespace YazilimYapimi
             // islemDetay
             // 
             this.islemDetay.Text = "İşlem Detay";
-            this.islemDetay.Width = 152;
+            this.islemDetay.Width = 210;
             // 
             // usedMoney
             // 
             this.usedMoney.Text = "Harcanan Tutar";
-            this.usedMoney.Width = 150;
+            this.usedMoney.Width = 181;
             // 
             // leftMoney
             // 
             this.leftMoney.Text = "Alıcının Kalan Parası";
-            this.leftMoney.Width = 168;
+            this.leftMoney.Width = 236;
             // 
             // birimFiyat
             // 
@@ -459,7 +487,7 @@ namespace YazilimYapimi
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1113, 489);
+            this.tabPage4.Size = new System.Drawing.Size(1138, 489);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Talep Oluştur";
             // 
@@ -473,9 +501,9 @@ namespace YazilimYapimi
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Location = new System.Drawing.Point(24, 33);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(437, 330);
+            this.groupBox4.Size = new System.Drawing.Size(1055, 330);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Talep Oluştur";
@@ -498,10 +526,10 @@ namespace YazilimYapimi
             this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(118, 233);
+            this.bunifuThinButton23.Location = new System.Drawing.Point(410, 244);
             this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton23.Name = "bunifuThinButton23";
-            this.bunifuThinButton23.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton23.Size = new System.Drawing.Size(286, 64);
             this.bunifuThinButton23.TabIndex = 12;
             this.bunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton23.Click += new System.EventHandler(this.bunifuThinButton23_Click);
@@ -517,7 +545,7 @@ namespace YazilimYapimi
             this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(135, 160);
+            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(135, 126);
             this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
             this.bunifuMetroTextbox1.Size = new System.Drawing.Size(216, 44);
@@ -535,7 +563,7 @@ namespace YazilimYapimi
             this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(135, 101);
+            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(646, 35);
             this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
             this.bunifuMetroTextbox2.Size = new System.Drawing.Size(216, 44);
@@ -546,7 +574,7 @@ namespace YazilimYapimi
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(11, 170);
+            this.label7.Location = new System.Drawing.Point(11, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 25);
             this.label7.TabIndex = 7;
@@ -556,7 +584,7 @@ namespace YazilimYapimi
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(11, 111);
+            this.label8.Location = new System.Drawing.Point(522, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(125, 25);
             this.label8.TabIndex = 6;
@@ -581,35 +609,37 @@ namespace YazilimYapimi
             this.comboBox1.Size = new System.Drawing.Size(216, 33);
             this.comboBox1.TabIndex = 2;
             // 
-            // label10
+            // Cikis
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(35, 160);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(163, 25);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Yatırılacak Tutar :";
+            this.Cikis.BackColor = System.Drawing.Color.Transparent;
+            this.Cikis.BackgroundImage = global::YazilimYapimi.Properties.Resources.exit;
+            this.Cikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cikis.Location = new System.Drawing.Point(1045, 41);
+            this.Cikis.Name = "Cikis";
+            this.Cikis.Size = new System.Drawing.Size(48, 40);
+            this.Cikis.TabIndex = 26;
+            this.Cikis.UseVisualStyleBackColor = false;
+            this.Cikis.Click += new System.EventHandler(this.Cikis_Click);
             // 
-            // comboBox2
+            // Don
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "TRY",
-            "USD",
-            "EUR",
-            "GBP"});
-            this.comboBox2.Location = new System.Drawing.Point(205, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(232, 33);
-            this.comboBox2.TabIndex = 18;
+            this.Don.BackColor = System.Drawing.Color.Transparent;
+            this.Don.BackgroundImage = global::YazilimYapimi.Properties.Resources.left;
+            this.Don.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Don.Location = new System.Drawing.Point(956, 41);
+            this.Don.Name = "Don";
+            this.Don.Size = new System.Drawing.Size(48, 40);
+            this.Don.TabIndex = 25;
+            this.Don.UseVisualStyleBackColor = false;
+            this.Don.Click += new System.EventHandler(this.Don_Click);
             // 
             // kullaniciEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 624);
+            this.ClientSize = new System.Drawing.Size(1168, 624);
+            this.Controls.Add(this.Cikis);
+            this.Controls.Add(this.Don);
             this.Controls.Add(this.tabControl1);
             this.Name = "kullaniciEkran";
             this.Text = "kullaniciEkran";
@@ -675,7 +705,9 @@ namespace YazilimYapimi
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox paraBirim;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button Cikis;
+        private System.Windows.Forms.Button Don;
     }
 }

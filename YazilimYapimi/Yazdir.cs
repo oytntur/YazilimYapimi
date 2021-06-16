@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace YazilimYapimi
 {
-    public partial class test : MetroFramework.Forms.MetroForm
+    public partial class Yazdir : MetroFramework.Forms.MetroForm
     {
-        public test()
+        public Yazdir()
         {
             InitializeComponent();
         }
@@ -24,13 +24,9 @@ namespace YazilimYapimi
         SqlCommand com = new SqlCommand();
         DataSet ds = new DataSet();
 
-        private void test_Load(object sender, EventArgs e)
-        {
+        
 
-
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void YazdirmaBtn_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
 
@@ -49,7 +45,7 @@ namespace YazilimYapimi
                     dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
                 }
             }
-            string folderPath = "C:\\Excel\\";
+            string folderPath = "C:\\Users\\SERDAR SAVAŞ\\Desktop\\Excel\\";
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
@@ -81,12 +77,13 @@ namespace YazilimYapimi
 
                 //Save the Excel file.
                 wb.SaveAs(folderPath + "DataGridViewExport.xlsx");
+                MessageBox.Show("Yazdırma işlemi başarıyla gerçekleştirilmiştir.", "Excel'e Yazdir", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } 
         }
         void griddoldur()
         {
 
-            con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+            con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
             da = new SqlDataAdapter("exec excelProc @p1,@p2", con);
             da.SelectCommand.Parameters.Add("@p1", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
             da.SelectCommand.Parameters.Add("@p2", SqlDbType.Date).Value = dateTimePicker2.Value.Date;
@@ -96,9 +93,41 @@ namespace YazilimYapimi
             dataGridView1.DataSource = ds.Tables["Personel"];
             con.Close();
         }
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void Goster_Click(object sender, EventArgs e)
         {
             griddoldur();
+        }
+
+        private void Don_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                girisEkran girisEkran = new girisEkran();
+                girisEkran.Show();
+                this.Hide();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Sistemde Çalışmaya devam edebilirsiniz.");
+            }
+
+        }
+
+        private void Cikis_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Program kapatılmadı.");
+            }
+
         }
     }
 }

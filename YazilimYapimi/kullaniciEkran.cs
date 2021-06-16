@@ -13,9 +13,9 @@ namespace YazilimYapimi
 {
     public partial class kullaniciEkran : MetroFramework.Forms.MetroForm
     {
-        SqlCommand cmd;
+        SqlCommand cmd; //SQL e baglantı kuruyoruz
         SqlDataReader dr;
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
         int userID;
         public kullaniciEkran(int userID)
         {
@@ -87,7 +87,7 @@ namespace YazilimYapimi
             }
             con.Close();
         }
-        private void urunGetir()
+        private void urunGetir()            //Satis productan Urun getiriyoruz
         {
             urunListView.Items.Clear();
             cmd = new SqlCommand("satisProc '" + userID + "'", con);
@@ -185,7 +185,7 @@ namespace YazilimYapimi
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            cmd = new SqlCommand("EXEC addMoney '" + userID + "','" + Convert.ToDecimal(textBox1.Text) + "'", con);
+            cmd = new SqlCommand("EXEC addMoney '" + userID + "','" + Convert.ToDecimal(textBox1.Text) + "','" + paraBirim.Text + "'", con);
             con.Open();
             try
             {
@@ -194,7 +194,7 @@ namespace YazilimYapimi
             }
             catch (Exception)
             {
-                MessageBox.Show("Bir Hata Meydana Geldi");
+                MessageBox.Show("Bir Hata Meydana Geldi!");
                 throw;
             }
             con.Close();
@@ -219,7 +219,7 @@ namespace YazilimYapimi
             con.Close();
             satisKontrol(Convert.ToInt32(bunifuMetroTextbox2.Text), Convert.ToDecimal(bunifuMetroTextbox1.Text), comboBox1.SelectedIndex + 1);
         }
-        private void talepKontrol(int miktar,decimal fiyat,int urunid)
+        private void talepKontrol(int miktar,decimal fiyat,int urunid)               //Talepler tablosundan  talep durumunu ayarlıyoruz
         {
             SqlCommand cmd2;
             cmd = new SqlCommand("select * from tblTalepler where bitti=0 and urunID='"+urunid+"'and" +
@@ -256,7 +256,7 @@ namespace YazilimYapimi
             cmd.ExecuteNonQuery();
             con.Close();
         }
-        private void satisKontrol(int miktar, decimal fiyat, int urunid)
+        private void satisKontrol(int miktar, decimal fiyat, int urunid)        //satis tablosundan satisi kontrol ediyoruz
         {
             SqlCommand cmd2;
             cmd = new SqlCommand("select * from tblSatis where urunID='" + urunid + "'and" +
@@ -291,6 +291,36 @@ namespace YazilimYapimi
             cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        private void Don_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                girisEkran girisEkran = new girisEkran();
+                girisEkran.Show();
+                this.Hide();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Sistemde Çalışmaya devam edebilirsiniz.");
+            }
+        }
+
+        private void Cikis_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Program kapatılmadı.");
+            }
         }
     }
 }

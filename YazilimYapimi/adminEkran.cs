@@ -19,7 +19,7 @@ namespace YazilimYapimi
     {
         SqlCommand cmd;
         SqlDataReader dr;
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-S1IT89F\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-7M06I3FK\\SQLEXPRESS;Initial Catalog=BorsaApp;Integrated Security=True");
         decimal USD=0, EUR=0, GBP=0;
         public adminEkran()
         {
@@ -222,6 +222,38 @@ namespace YazilimYapimi
             dr.Close();
             con.Close();
         }
+
+        private void Don_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                girisEkran girisEkran = new girisEkran();
+                girisEkran.Show();
+                this.Hide();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Sistemde Çalışmaya devam edebilirsiniz.");
+            }
+        }
+
+        private void Cikis_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Devam etmek istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            if (cikis == DialogResult.No)
+            {
+                MessageBox.Show("Program kapatılmadı.");
+            }
+
+        }
+
         private void paraGetir()
         {
             cmd = new SqlCommand("SELECT * FROM tblUser WHERE userID='" + 3 + "'", con);

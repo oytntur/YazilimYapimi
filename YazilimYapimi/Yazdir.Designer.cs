@@ -1,7 +1,7 @@
 ﻿
 namespace YazilimYapimi
 {
-    partial class test
+    partial class Yazdir
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,15 @@ namespace YazilimYapimi
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.excelLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appData = new YazilimYapimi.AppData();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.YazdirmaBtn = new MetroFramework.Controls.MetroButton();
             this.excelLogTableAdapter = new YazilimYapimi.AppDataTableAdapters.excelLogTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.Goster = new MetroFramework.Controls.MetroButton();
+            this.Cikis = new System.Windows.Forms.Button();
+            this.Don = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -62,12 +64,12 @@ namespace YazilimYapimi
             this.miktarDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.excelLogBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(789, 440);
             this.dataGridView1.TabIndex = 0;
             // 
             // urunAdDataGridViewTextBoxColumn
@@ -116,14 +118,14 @@ namespace YazilimYapimi
             this.appData.DataSetName = "AppData";
             this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // metroButton1
+            // YazdirmaBtn
             // 
-            this.metroButton1.Location = new System.Drawing.Point(660, 486);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(146, 39);
-            this.metroButton1.TabIndex = 1;
-            this.metroButton1.Text = "Tabloyu Yazdır";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.YazdirmaBtn.Location = new System.Drawing.Point(946, 415);
+            this.YazdirmaBtn.Name = "YazdirmaBtn";
+            this.YazdirmaBtn.Size = new System.Drawing.Size(185, 48);
+            this.YazdirmaBtn.TabIndex = 1;
+            this.YazdirmaBtn.Text = "Tabloyu Yazdır";
+            this.YazdirmaBtn.Click += new System.EventHandler(this.YazdirmaBtn_Click);
             // 
             // excelLogTableAdapter
             // 
@@ -131,14 +133,14 @@ namespace YazilimYapimi
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(119, 439);
+            this.dateTimePicker1.Location = new System.Drawing.Point(931, 149);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(444, 439);
+            this.dateTimePicker2.Location = new System.Drawing.Point(931, 191);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 3;
@@ -146,7 +148,7 @@ namespace YazilimYapimi
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 444);
+            this.label1.Location = new System.Drawing.Point(805, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 4;
@@ -155,36 +157,61 @@ namespace YazilimYapimi
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(340, 444);
+            this.label2.Location = new System.Drawing.Point(827, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Bitiş Tarihi :";
             // 
-            // metroButton2
+            // Goster
             // 
-            this.metroButton2.Location = new System.Drawing.Point(660, 439);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(146, 39);
-            this.metroButton2.TabIndex = 6;
-            this.metroButton2.Text = "Tabloyu Güncelle";
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.Goster.Location = new System.Drawing.Point(915, 249);
+            this.Goster.Name = "Goster";
+            this.Goster.Size = new System.Drawing.Size(146, 39);
+            this.Goster.TabIndex = 6;
+            this.Goster.Text = "Tabloyu Güncelle";
+            this.Goster.Click += new System.EventHandler(this.Goster_Click);
             // 
-            // test
+            // Cikis
+            // 
+            this.Cikis.BackColor = System.Drawing.Color.Transparent;
+            this.Cikis.BackgroundImage = global::YazilimYapimi.Properties.Resources.exit;
+            this.Cikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cikis.Location = new System.Drawing.Point(984, 31);
+            this.Cikis.Name = "Cikis";
+            this.Cikis.Size = new System.Drawing.Size(65, 40);
+            this.Cikis.TabIndex = 24;
+            this.Cikis.UseVisualStyleBackColor = false;
+            this.Cikis.Click += new System.EventHandler(this.Cikis_Click);
+            // 
+            // Don
+            // 
+            this.Don.BackColor = System.Drawing.Color.Transparent;
+            this.Don.BackgroundImage = global::YazilimYapimi.Properties.Resources.left;
+            this.Don.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Don.Location = new System.Drawing.Point(895, 31);
+            this.Don.Name = "Don";
+            this.Don.Size = new System.Drawing.Size(65, 40);
+            this.Don.TabIndex = 23;
+            this.Don.UseVisualStyleBackColor = false;
+            this.Don.Click += new System.EventHandler(this.Don_Click);
+            // 
+            // Yazdir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 548);
-            this.Controls.Add(this.metroButton2);
+            this.ClientSize = new System.Drawing.Size(1142, 540);
+            this.Controls.Add(this.Cikis);
+            this.Controls.Add(this.Don);
+            this.Controls.Add(this.Goster);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.YazdirmaBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "test";
-            this.Text = "test";
-            this.Load += new System.EventHandler(this.test_Load);
+            this.Name = "Yazdir";
+            this.Text = "Görüntüle ve Yazdır";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
@@ -196,7 +223,7 @@ namespace YazilimYapimi
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton YazdirmaBtn;
         private AppData appData;
         private System.Windows.Forms.BindingSource excelLogBindingSource;
         private AppDataTableAdapters.excelLogTableAdapter excelLogTableAdapter;
@@ -208,6 +235,8 @@ namespace YazilimYapimi
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton Goster;
+        private System.Windows.Forms.Button Don;
+        private System.Windows.Forms.Button Cikis;
     }
 }

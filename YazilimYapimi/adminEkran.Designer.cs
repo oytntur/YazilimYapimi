@@ -67,6 +67,8 @@ namespace YazilimYapimi
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cikis = new System.Windows.Forms.Button();
+            this.Don = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -392,11 +394,37 @@ namespace YazilimYapimi
             this.columnHeader13.Text = "Fiyat";
             this.columnHeader13.Width = 175;
             // 
+            // Cikis
+            // 
+            this.Cikis.BackColor = System.Drawing.Color.Transparent;
+            this.Cikis.BackgroundImage = global::YazilimYapimi.Properties.Resources.exit;
+            this.Cikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Cikis.Location = new System.Drawing.Point(1229, 53);
+            this.Cikis.Name = "Cikis";
+            this.Cikis.Size = new System.Drawing.Size(65, 40);
+            this.Cikis.TabIndex = 28;
+            this.Cikis.UseVisualStyleBackColor = false;
+            this.Cikis.Click += new System.EventHandler(this.Cikis_Click);
+            // 
+            // Don
+            // 
+            this.Don.BackColor = System.Drawing.Color.Transparent;
+            this.Don.BackgroundImage = global::YazilimYapimi.Properties.Resources.left;
+            this.Don.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Don.Location = new System.Drawing.Point(1140, 53);
+            this.Don.Name = "Don";
+            this.Don.Size = new System.Drawing.Size(65, 40);
+            this.Don.TabIndex = 27;
+            this.Don.UseVisualStyleBackColor = false;
+            this.Don.Click += new System.EventHandler(this.Don_Click);
+            // 
             // adminEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1394, 815);
+            this.Controls.Add(this.Cikis);
+            this.Controls.Add(this.Don);
             this.Controls.Add(this.tabControl1);
             this.Name = "adminEkran";
             this.Text = "Yönetici Paneli";
@@ -453,5 +481,7 @@ namespace YazilimYapimi
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Cikis;
+        private System.Windows.Forms.Button Don;
     }
 }
