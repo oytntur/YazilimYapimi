@@ -185,7 +185,7 @@ namespace YazilimYapimi
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            cmd = new SqlCommand("EXEC addMoney '" + userID + "','" + Convert.ToDecimal(textBox1.Text) + "'", con);
+            cmd = new SqlCommand("EXEC addMoney '" + userID + "','" + Convert.ToDecimal(textBox1.Text) + "','"+paraBirim.Text+"'", con);
             con.Open();
             try
             {
