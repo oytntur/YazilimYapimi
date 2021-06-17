@@ -29,6 +29,8 @@ namespace YazilimYapimi
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminEkran));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,14 +69,32 @@ namespace YazilimYapimi
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.BtnYazdir = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Goster = new MetroFramework.Controls.MetroButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.excelLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new YazilimYapimi.AppData();
             this.Cikis = new System.Windows.Forms.Button();
             this.Don = new System.Windows.Forms.Button();
+            this.excelLogTableAdapter = new YazilimYapimi.AppDataTableAdapters.excelLogTableAdapter();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,6 +103,7 @@ namespace YazilimYapimi
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(22, 84);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -394,6 +415,129 @@ namespace YazilimYapimi
             this.columnHeader13.Text = "Fiyat";
             this.columnHeader13.Width = 175;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.groupBox2);
+            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1341, 679);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Yazdır";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // BtnYazdir
+            // 
+            this.BtnYazdir.ActiveBorderThickness = 1;
+            this.BtnYazdir.ActiveCornerRadius = 20;
+            this.BtnYazdir.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnYazdir.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnYazdir.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnYazdir.BackColor = System.Drawing.Color.Transparent;
+            this.BtnYazdir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnYazdir.BackgroundImage")));
+            this.BtnYazdir.ButtonText = "Yazdır";
+            this.BtnYazdir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnYazdir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnYazdir.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnYazdir.IdleBorderThickness = 1;
+            this.BtnYazdir.IdleCornerRadius = 20;
+            this.BtnYazdir.IdleFillColor = System.Drawing.Color.White;
+            this.BtnYazdir.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnYazdir.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnYazdir.Location = new System.Drawing.Point(103, 375);
+            this.BtnYazdir.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnYazdir.Name = "BtnYazdir";
+            this.BtnYazdir.Size = new System.Drawing.Size(286, 53);
+            this.BtnYazdir.TabIndex = 15;
+            this.BtnYazdir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnYazdir.Click += new System.EventHandler(this.BtnYazdir_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Goster);
+            this.groupBox2.Controls.Add(this.BtnYazdir);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.Location = new System.Drawing.Point(849, 75);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(474, 501);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Verileri Göster";
+            // 
+            // Goster
+            // 
+            this.Goster.Location = new System.Drawing.Point(149, 196);
+            this.Goster.Name = "Goster";
+            this.Goster.Size = new System.Drawing.Size(197, 51);
+            this.Goster.TabIndex = 13;
+            this.Goster.Text = "Tabloyu Güncelle";
+            this.Goster.UseWaitCursor = true;
+            this.Goster.Click += new System.EventHandler(this.Goster_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(31, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Bitiş Tarihi :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(9, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Başlangıç Tarihi";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(176, 117);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(273, 27);
+            this.dateTimePicker2.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(176, 73);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(273, 27);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(804, 572);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // excelLogBindingSource
+            // 
+            this.excelLogBindingSource.DataMember = "excelLog";
+            this.excelLogBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Cikis
             // 
             this.Cikis.BackColor = System.Drawing.Color.Transparent;
@@ -418,6 +562,23 @@ namespace YazilimYapimi
             this.Don.UseVisualStyleBackColor = false;
             this.Don.Click += new System.EventHandler(this.Don_Click);
             // 
+            // excelLogTableAdapter
+            // 
+            this.excelLogTableAdapter.ClearBeforeFill = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label7.Location = new System.Drawing.Point(931, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(322, 34);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Excel\'e Yazdırmak için";
+            // 
             // adminEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,6 +598,13 @@ namespace YazilimYapimi
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.excelLogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,5 +651,18 @@ namespace YazilimYapimi
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Cikis;
         private System.Windows.Forms.Button Don;
+        private System.Windows.Forms.TabPage tabPage5;
+        private MetroFramework.Controls.MetroButton Goster;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private AppData appData;
+        private System.Windows.Forms.BindingSource excelLogBindingSource;
+        private AppDataTableAdapters.excelLogTableAdapter excelLogTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnYazdir;
+        private System.Windows.Forms.Label label7;
     }
 }

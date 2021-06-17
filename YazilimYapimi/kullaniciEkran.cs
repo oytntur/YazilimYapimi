@@ -218,6 +218,7 @@ namespace YazilimYapimi
             }
             con.Close();
             satisKontrol(Convert.ToInt32(bunifuMetroTextbox2.Text), Convert.ToDecimal(bunifuMetroTextbox1.Text), comboBox1.SelectedIndex + 1);
+            MessageBox.Show("Talep Başarıyla oluşturuldu!", "Bilgilendirme Penceresi");
         }
         private void talepKontrol(int miktar,decimal fiyat,int urunid)               //Talepler tablosundan  talep durumunu ayarlıyoruz
         {
@@ -254,44 +255,52 @@ namespace YazilimYapimi
             cmd2.ExecuteNonQuery();
             cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
             cmd.ExecuteNonQuery();
-            con.Close();
+            con.Close();                      
         }
-        private void satisKontrol(int miktar, decimal fiyat, int urunid)        //satis tablosundan satisi kontrol ediyoruz
+        private void satisKontrol(int miktar, decimal fiyat, int urunid)                   //satis tablosundan satisi kontrol ediyoruz
         {
             SqlCommand cmd2;
             cmd = new SqlCommand("select * from tblSatis where urunID='" + urunid + "'and" +
                 " userID != '" + userID + "'", con);
             con.Open();
             dr = cmd.ExecuteReader();
-            int stok = 0, satisid = 0;
+            int satisid = 0, stok = 0;
             int userid = 0, talepid = 0;
+            decimal cost = 0;
             while (dr.Read())
             {
                 if (Convert.ToDecimal(dr["cost"]) <= fiyat && Convert.ToInt32(dr["stokMiktar"]) >= miktar)
-                {                   
+                {
                     userid = Convert.ToInt32(dr["userID"]);
                     satisid = Convert.ToInt32(dr["satisID"]);
+                    cost = Convert.ToDecimal(dr["cost"]);
+                    stok = Convert.ToInt32(dr["stokMiktar"]);
                     break;
                 }
             }
 
             dr.Close();
-            cmd = new SqlCommand("(select count(talepID) as 'Test' from tblTalepler)", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (cost <= fiyat && stok >= miktar)
             {
-                talepid = Convert.ToInt32(dr["Test"]);
+                cmd = new SqlCommand("(select count(talepID) as 'Test' from tblTalepler)", con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    talepid = Convert.ToInt32(dr["Test"]);
+                }
+                dr.Close();
+                cmd2 = new SqlCommand("exec satinAl '" + miktar + "'," +
+                            " '" + satisid + "' ," +
+                            "'" + fiyat + "','" + userID + "'," +
+                            "'" + userid + "'", con);
+                cmd2.ExecuteNonQuery();
+                cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
+                cmd.ExecuteNonQuery();
             }
-            dr.Close();
-            cmd2 = new SqlCommand("exec satinAl '" + miktar + "'," +
-                        " '" + satisid + "' ," +
-                        "'" + fiyat + "','" + userID + "'," +
-                        "'" + userid + "'", con);
-            cmd2.ExecuteNonQuery();
-            cmd = new SqlCommand("update tblTalepler set bitti=1 where talepID='" + talepid + "'", con);
-            cmd.ExecuteNonQuery();
+
             con.Close();
         }
+
 
         private void Don_Click(object sender, EventArgs e)
         {

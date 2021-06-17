@@ -117,4 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnYazdir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAR4AAAA1CAYAAACX1YSXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL8SURBVHhe7d1PSJNhHMBxjx49dtOjhDpCQms4zUC82aE2
+        BXFLN4UKT1EdIjsE5pzOuU2sU3/AiylRiREoJppQBxERxcPCYIccMv8Mk3l44/f6pJRihnsfCL4f+MHY
+        u+34Zc/zjL1ZAAAAAAAAAAAAwP8tt82dXdTprC0Le0cc4abZ0pA7UdTpMhiGYf4c6YN0ojziHS/0uzy2
+        YE2OSsnJFfmvVl/s9ay1Dvs3RhenjS/fFoz4+qoBAEeRPkgnxpY/G3fe9mzZw43JkqDbp5JyPKlURdQ3
+        3DDwIJlIJdVHAsC/2dxJGbffBNcdEd/MWf+1Myoxh0l0HBHvytDcWFq9FwBOZSo2a1T131ixtbvyVGp+
+        J990iA6ATJMlmOz/qNQckD0dWV7tvQwAMqtj/FnKHrr+UCVn7/RKNpLZ0wFglZ3dtFH95NZaQaAu3wyP
+        HH3JLrS6DgCWePppaPdCrydohkfO3eUIDACstPT9q2EPN8bM8NhDnnhsLa4uAYA1ZLl1rqtu1wxPcXf9
+        tpy5A4DV5FfOZnjkAQDoQHgAaEd4AGhHeABoR3gAaEd4AGhHeABoR3gAaEd4AGhHeABoR3gAaEd4AGhH
+        eABoR3gAaEd4AGhHeABoR3gAaEd4AGhHeABoR3gAaLcfHvnXd/n3dwCw2n54SkPuRHx9VT0NANbZD48j
+        4puZis2qpwHAGnL/PrmPnxme81319wMTL3+oawBgidfzE0ZZuHHQDI+t3ZV3ua8lyT4PACu1DD5aL+hw
+        XjHDI8qjvkDP5MCWug4AGfVuYTJ9Kdr8XiVnT26bO7sy2jw/F19WLwOAzEikkkZ5xLtqC9bkqOQcKAjU
+        5Vf130zIBhAAZIJEx/X87pqt01WhUnNY4WNnqSPiXemffsVmM4BT+bA0kza/6RwXnV9k2VUWaeqtfXEv
+        KbvQUiwAOInNnZQxujhttA77Nyr7Wj4eubw6jlRKjr5Kgg0b8qMfhmGYv01xd/12Wdg7UtTprFUpAQAA
+        AAAAAADgtLKyfgIecCs/zWg2SQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="excelLogBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>131, 17</value>
+  </metadata>
+  <metadata name="appData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="excelLogTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>346, 17</value>
+  </metadata>
 </root>
